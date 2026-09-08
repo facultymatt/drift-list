@@ -1,0 +1,21 @@
+{
+  "name": "drift-list",
+  "version": "0.1.0",
+  "description": "Claude writes the code. Drift List tells you which engineering judgments you stopped making.",
+  "type": "module",
+  "bin": {
+    "drift-list": "./src/v6/analyze6.ts"
+  },
+  "scripts": {
+    "drift-list": "tsx src/v6/analyze6.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.x",
+    "tsx": "^4.x",
+    "typescript": "^5.x"
+  }
+}
