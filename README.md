@@ -10,6 +10,29 @@ It reads your Claude Code session transcripts and surfaces the decisions that go
      brief thinking beat -> Drift List item referencing the code just written ->
      "dive in" call to action. -->
 
+## Privacy
+
+Nothing leaves your machine that wasn't already sent to or received from Claude Code.
+
+**What Drift List sends**
+- Excerpts from your local Claude Code session logs:
+  - Timestamps
+  - Your messages (first 2,000 characters of each)
+  - Claude's replies (first 2,000 characters of each)
+  - Claude's tool calls: tool name plus the file path, or the first 120 characters of a shell command or search pattern
+- A fixed analysis prompt ([phase1-decisions.md](./src/v6/prompts/phase1-decisions.md)), and in a second call, the decisions found in the first along with a report-generating prompt ([phase2-render.md)](src/v6/prompts/phase2-render.md).
+
+**Where it goes**
+- Only to the endpoint you configure with `ANTHROPIC_BASE_URL`, the same one Claude Code uses.
+- No telemetry, analytics, or other network calls.
+
+**What it never touches**
+- File contents, tool results, bash output, or thinking text from your logs.
+- Your project files. It reads the session logs only.
+- Your logs or code. It writes only to its output directory.
+- Session IDs and working-directory paths stay local.
+
+
 ## Quick Start
 
 Requires Node 22 or greater. Set your credentials, then run:
@@ -161,12 +184,6 @@ Working: the two-phase analysis pipeline, the Drift List, exercises and architec
 
 Not built yet: the editor extension, the intervention layer, dive-in surfaces, persistent Drift List history and recurrence detection.
 
-## Privacy
-
-Drift List reads the Claude Code session logs on your machine and sends a window of them to whatever endpoint you configure — the same one Claude Code uses; set `ANTHROPIC_BASE_URL` accordingly. It accesses your work through those logs only, never by opening your project files directly. What leaves your machine is limited to what was already in the transcript.
-
-It writes only to the output directory, and never modifies your logs or your code. The analysis pipeline is one file; read it if you want to know exactly what leaves your machine.
-
 ## Contribute
 
 - **Try it and share feedback.** Open a discussion or issue on Github — what resonated, what missed, what felt off. Every report is a data point.
@@ -204,9 +221,9 @@ skills needed to support higher-order thinking."
       "id": "43058dc2-479f-4488-8737-a0cca3f8c359",
       "anchor": {
         "text": "Requires Node 22",
-        "startLine": 14,
+        "startLine": 37,
         "startChar": 0,
-        "endLine": 14,
+        "endLine": 37,
         "endChar": 16
       },
       "content": "Or greater",
@@ -260,9 +277,9 @@ skills needed to support higher-order thinking."
       "id": "e62ab5ed-b2ab-4388-a85d-f5dffd5b3d51",
       "anchor": {
         "text": "drift",
-        "startLine": 19,
+        "startLine": 42,
         "startChar": 23,
-        "endLine": 19,
+        "endLine": 42,
         "endChar": 28
       },
       "content": "So the use of drift here is unfortunate because I think it kind of gets modeled with the drift list name. I don't want people to think that it only deals with Timer drift. Is there a way free word what's happening here with the timer additionally down online 77 and 83 the word drift is used a second and third time.",
