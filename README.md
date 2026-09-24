@@ -169,7 +169,7 @@ It writes only to the output directory, and never modifies your logs or your cod
 
 ## Contribute
 
-- **Try it and share feedback.** Open a discussion or issue on GitLab — what resonated, what missed, what felt off. Every report is a data point.
+- **Try it and share feedback.** Open a discussion or issue on Github — what resonated, what missed, what felt off. Every report is a data point.
 - **Run it on your own sessions and share results.** Because transcripts can contain sensitive context, I haven't worked out a full workflow for sharing logs and eval results in source control yet. If you want to contribute eval data, reach out and we can coordinate something.
 - **Help expand concept coverage.** The current taxonomy skews toward React/TS/Full Stack. If you work in Go, Rust, Python infrastructure, or anything outside that range, your sessions would be especially useful for broadening what the analyzer recognizes.
 
