@@ -190,6 +190,18 @@ Not built yet: the editor extension, the intervention layer, dive-in surfaces, p
 - **Run it on your own sessions and share results.** Because transcripts can contain sensitive context, I haven't worked out a full workflow for sharing logs and eval results in source control yet. If you want to contribute eval data, reach out and we can coordinate something.
 - **Help expand concept coverage.** The current taxonomy skews toward React/TS/Full Stack. If you work in Go, Rust, Python infrastructure, or anything outside that range, your sessions would be especially useful for broadening what the analyzer recognizes.
 
+### Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) to manage versions and the changelog. If your PR contains a user-facing change, add a changeset:
+
+```sh
+npm run changeset
+```
+
+Pick a bump type (`patch` / `minor` / `major`) and write a short summary. Commit the generated file under `.changeset/` along with your changes. Docs-only or internal-refactor PRs can skip this (or use `npx changeset --empty` if the tooling complains).
+
+Releases are cut by a maintainer with `npm run version` (bumps `package.json` and updates `CHANGELOG.md`) followed by `npm run release`.
+
 ## The research
 
 Anthropic's analysis of coding usage found that
