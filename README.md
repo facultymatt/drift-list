@@ -45,6 +45,12 @@ npx github:facultymatt/drift-list --hours 1
 
 Report appears in `~/.drift-list/runs/<timestamp>/report.md`.
 
+Working from a clone? Use `npm run drift-list --` in place of `npx github:facultymatt/drift-list`, for example: 
+
+```sh
+npm run drift-list -- --hours 1
+```
+
 Using a corporate gateway such as AskSage? Add one more line before running:
 
 ```sh

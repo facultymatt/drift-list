@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Claude writes the code. Drift List tells you which engineering judgments you stopped making.",
   "type": "module",
+  "private": true,
   "bin": {
     "drift-list": "./src/v6/analyze6.ts"
   },
