@@ -10,6 +10,10 @@ It reads your Claude Code session transcripts and surfaces the decisions that go
      brief thinking beat -> Drift List item referencing the code just written ->
      "dive in" call to action. -->
 
+## Examples
+
+- [Report from a session on this repo](./examples/drift-list-changesets-add.md): adding changesets for versioning. Drift List flagged seven decisions Claude made that I hadn't weighed.
+
 ## Privacy
 
 Nothing from your work leaves your machine that wasn't already sent to or received from Claude Code.
@@ -241,9 +245,9 @@ skills needed to support higher-order thinking."
       "id": "43058dc2-479f-4488-8737-a0cca3f8c359",
       "anchor": {
         "text": "Requires Node 22",
-        "startLine": 38,
+        "startLine": 42,
         "startChar": 0,
-        "endLine": 38,
+        "endLine": 42,
         "endChar": 16
       },
       "content": "Or greater",
@@ -297,10 +301,10 @@ skills needed to support higher-order thinking."
       "id": "e62ab5ed-b2ab-4388-a85d-f5dffd5b3d51",
       "anchor": {
         "text": "drift",
-        "startLine": 43,
-        "startChar": 23,
-        "endLine": 43,
-        "endChar": 28
+        "startLine": 14,
+        "startChar": 50,
+        "endLine": 14,
+        "endChar": 55
       },
       "content": "So the use of drift here is unfortunate because I think it kind of gets modeled with the drift list name. I don't want people to think that it only deals with Timer drift. Is there a way free word what's happening here with the timer additionally down online 77 and 83 the word drift is used a second and third time.",
       "author": "Matt Miller",
