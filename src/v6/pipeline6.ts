@@ -144,7 +144,7 @@ function createClient(): Anthropic {
 
   if (!apiKey) {
     throw new Error(
-      'No API key found. Set ANTHROPIC_AUTH_TOKEN (AskSage) or ANTHROPIC_API_KEY in your environment.'
+      'No API key found. Set ANTHROPIC_AUTH_TOKEN or ANTHROPIC_API_KEY in your environment.'
     )
   }
 

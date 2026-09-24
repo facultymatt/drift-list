@@ -10,6 +10,34 @@ It reads your Claude Code session transcripts and surfaces the decisions that go
      brief thinking beat -> Drift List item referencing the code just written ->
      "dive in" call to action. -->
 
+## Examples
+
+- [Report from a session on this repo](./examples/drift-list-changesets-add.md): adding changesets for versioning. Drift List flagged seven decisions Claude made that I hadn't weighed.
+
+## Privacy
+
+Nothing from your work leaves your machine that wasn't already sent to or received from Claude Code.
+
+**What Drift List sends**
+- Excerpts from your local Claude Code session logs:
+  - Timestamps
+  - Your messages (first 2,000 characters of each)
+  - Claude's replies (first 2,000 characters of each)
+  - Claude's tool calls: tool name plus the file path, or the first 120 characters of a shell command or search pattern
+- A fixed analysis prompt ([phase1-decisions.md](./src/v6/prompts/phase1-decisions.md))
+- In a second call, the decisions from the first, with a report prompt ([phase2-render.md](./src/v6/prompts/phase2-render.md))
+
+**Where it goes**
+- Only to the endpoint you configure with `ANTHROPIC_BASE_URL`, the same one Claude Code uses.
+- No telemetry, analytics, or other network calls.
+
+**What it never touches**
+- File contents, tool results, bash output, or thinking text from your logs.
+- Your project files. It reads the session logs only.
+- Your logs or code. It writes only to its output directory.
+- Session IDs and working-directory paths stay local.
+
+
 ## Quick Start
 
 Requires Node 22 or greater. Set your credentials, then run:
@@ -22,11 +50,18 @@ npx github:facultymatt/drift-list --hours 1
 
 Report appears in `~/.drift-list/runs/<timestamp>/report.md`.
 
+Working from a clone? Use `npm run drift-list --` in place of `npx github:facultymatt/drift-list`, for example: 
+
+```sh
+npm run drift-list -- --hours 1
+```
+
 Using a corporate gateway such as AskSage? Add one more line before running:
 
 ```sh
 export ANTHROPIC_BASE_URL="https://your-gateway/anthropic"
 ```
+
 
 ## Why
 
@@ -161,17 +196,23 @@ Working: the two-phase analysis pipeline, the Drift List, exercises and architec
 
 Not built yet: the editor extension, the intervention layer, dive-in surfaces, persistent Drift List history and recurrence detection.
 
-## Privacy
-
-Drift List reads the Claude Code session logs on your machine and sends a window of them to whatever endpoint you configure — the same one Claude Code uses; set `ANTHROPIC_BASE_URL` accordingly. It accesses your work through those logs only, never by opening your project files directly. What leaves your machine is limited to what was already in the transcript.
-
-It writes only to the output directory, and never modifies your logs or your code. The analysis pipeline is one file; read it if you want to know exactly what leaves your machine.
-
 ## Contribute
 
-- **Try it and share feedback.** Open a discussion or issue on GitLab — what resonated, what missed, what felt off. Every report is a data point.
+- **Try it and share feedback.** Open a discussion or issue on GitHub — what resonated, what missed, what felt off. Every report is a data point.
 - **Run it on your own sessions and share results.** Because transcripts can contain sensitive context, I haven't worked out a full workflow for sharing logs and eval results in source control yet. If you want to contribute eval data, reach out and we can coordinate something.
 - **Help expand concept coverage.** The current taxonomy skews toward React/TS/Full Stack. If you work in Go, Rust, Python infrastructure, or anything outside that range, your sessions would be especially useful for broadening what the analyzer recognizes.
+
+### Changesets
+
+This project uses [Changesets](https://github.com/changesets/changesets) to manage versions and the changelog. If your PR contains a user-facing change, add a changeset:
+
+```sh
+npm run changeset
+```
+
+Pick a bump type (`patch` / `minor` / `major`) and write a short summary. Commit the generated file under `.changeset/` along with your changes. Docs-only or internal-refactor PRs can skip this (or use `npx changeset --empty` if the tooling complains).
+
+Releases are cut by a maintainer with `npm run version` (bumps `package.json` and updates `CHANGELOG.md`) followed by `npm run release`.
 
 ## The research
 
@@ -204,9 +245,9 @@ skills needed to support higher-order thinking."
       "id": "43058dc2-479f-4488-8737-a0cca3f8c359",
       "anchor": {
         "text": "Requires Node 22",
-        "startLine": 14,
+        "startLine": 42,
         "startChar": 0,
-        "endLine": 14,
+        "endLine": 42,
         "endChar": 16
       },
       "content": "Or greater",
@@ -260,10 +301,10 @@ skills needed to support higher-order thinking."
       "id": "e62ab5ed-b2ab-4388-a85d-f5dffd5b3d51",
       "anchor": {
         "text": "drift",
-        "startLine": 19,
-        "startChar": 23,
-        "endLine": 19,
-        "endChar": 28
+        "startLine": 14,
+        "startChar": 50,
+        "endLine": 14,
+        "endChar": 55
       },
       "content": "So the use of drift here is unfortunate because I think it kind of gets modeled with the drift list name. I don't want people to think that it only deals with Timer drift. Is there a way free word what's happening here with the timer additionally down online 77 and 83 the word drift is used a second and third time.",
       "author": "Matt Miller",

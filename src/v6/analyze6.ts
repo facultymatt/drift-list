@@ -355,12 +355,12 @@ function logLogShape(decisionLog: DecisionLog): void {
 }
 
 function log(msg: string): void {
-  process.stderr.write(`[skill-drift-v6] ${msg}\n`)
+  process.stderr.write(`[drift-list-v6] ${msg}\n`)
 }
 
 main3().catch(err => {
   process.stderr.write(
-    `[skill-drift-v6] Error: ${err instanceof Error ? err.message : String(err)}\n`
+    `[drift-list-v6] Error: ${err instanceof Error ? err.message : String(err)}\n`
   )
   process.exit(1)
 })
