@@ -12,7 +12,7 @@ It reads your Claude Code session transcripts and surfaces the decisions that go
 
 ## Privacy
 
-Nothing leaves your machine that wasn't already sent to or received from Claude Code.
+Nothing from your work leaves your machine that wasn't already sent to or received from Claude Code.
 
 **What Drift List sends**
 - Excerpts from your local Claude Code session logs:
@@ -20,7 +20,8 @@ Nothing leaves your machine that wasn't already sent to or received from Claude 
   - Your messages (first 2,000 characters of each)
   - Claude's replies (first 2,000 characters of each)
   - Claude's tool calls: tool name plus the file path, or the first 120 characters of a shell command or search pattern
-- A fixed analysis prompt ([phase1-decisions.md](./src/v6/prompts/phase1-decisions.md)), and in a second call, the decisions found in the first along with a report-generating prompt ([phase2-render.md)](src/v6/prompts/phase2-render.md).
+- A fixed analysis prompt ([phase1-decisions.md](./src/v6/prompts/phase1-decisions.md))
+- In a second call, the decisions from the first, with a report prompt ([phase2-render.md](./src/v6/prompts/phase2-render.md))
 
 **Where it goes**
 - Only to the endpoint you configure with `ANTHROPIC_BASE_URL`, the same one Claude Code uses.
@@ -56,6 +57,7 @@ Using a corporate gateway such as AskSage? Add one more line before running:
 ```sh
 export ANTHROPIC_BASE_URL="https://your-gateway/anthropic"
 ```
+
 
 ## Why
 
@@ -192,7 +194,7 @@ Not built yet: the editor extension, the intervention layer, dive-in surfaces, p
 
 ## Contribute
 
-- **Try it and share feedback.** Open a discussion or issue on Github — what resonated, what missed, what felt off. Every report is a data point.
+- **Try it and share feedback.** Open a discussion or issue on GitHub — what resonated, what missed, what felt off. Every report is a data point.
 - **Run it on your own sessions and share results.** Because transcripts can contain sensitive context, I haven't worked out a full workflow for sharing logs and eval results in source control yet. If you want to contribute eval data, reach out and we can coordinate something.
 - **Help expand concept coverage.** The current taxonomy skews toward React/TS/Full Stack. If you work in Go, Rust, Python infrastructure, or anything outside that range, your sessions would be especially useful for broadening what the analyzer recognizes.
 
@@ -239,9 +241,9 @@ skills needed to support higher-order thinking."
       "id": "43058dc2-479f-4488-8737-a0cca3f8c359",
       "anchor": {
         "text": "Requires Node 22",
-        "startLine": 37,
+        "startLine": 38,
         "startChar": 0,
-        "endLine": 37,
+        "endLine": 38,
         "endChar": 16
       },
       "content": "Or greater",
@@ -295,9 +297,9 @@ skills needed to support higher-order thinking."
       "id": "e62ab5ed-b2ab-4388-a85d-f5dffd5b3d51",
       "anchor": {
         "text": "drift",
-        "startLine": 42,
+        "startLine": 43,
         "startChar": 23,
-        "endLine": 42,
+        "endLine": 43,
         "endChar": 28
       },
       "content": "So the use of drift here is unfortunate because I think it kind of gets modeled with the drift list name. I don't want people to think that it only deals with Timer drift. Is there a way free word what's happening here with the timer additionally down online 77 and 83 the word drift is used a second and third time.",
