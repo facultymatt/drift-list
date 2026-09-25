@@ -1,7 +1,6 @@
-
 # Drift List
 
-**Claude writes the code. Drift List tells you which engineering judgments you stopped making.**
+![Claude writes the code. Which judgments did you stop making?](https://github.com/user-attachments/assets/0dbb4fff-ec66-43a3-9696-ed469bdd3951)
 
 It reads your Claude Code session transcripts and surfaces the decisions that got made without you weighing them.
 
